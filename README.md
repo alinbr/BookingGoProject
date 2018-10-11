@@ -3,29 +3,34 @@
 
 ## How to use
 
-Clone the repository `https://github.com/alinbr/BookingGoProject`
+Clone the repository `git clone https://github.com/alinbr/BookingGoProject`
 
 Use Maven to build `mvn clean compile assembly:single`
 
-Use Maven to test `mvn clean compile assembly:single`
+Use Maven to run tests `mvn test`
 
 ### Part 1 A
 
 Run
-`java -cp target\BookingGoProject-1.0-SNAPSHOT-jar-with-dependencies.jar com.alin.musat.BookingGoProject.Part1A 1.1 2.1 3.1 4.1 5`
+Windows: `java -cp target\BookingGoProject-1.0-SNAPSHOT-jar-with-dependencies.jar com.alin.musat.BookingGoProject.Part1A [lat1] [long1] [lat2] [long2] [passengers]`
 
-Replace 1.1 2.1 with desired longitude
-Replace 3.1 4.1 with desired latitude
-Replace 5 with the desired number of passengers. This argument is optional.
+MacOs: `java -cp target/BookingGoProject-1.0-SNAPSHOT-jar-with-dependencies.jar com.alin.musat.BookingGoProject.Part1A [lat1] [long1] [lat2] [long2] [passengers]`
+
+Replace [lat1] [long1] with desired longitude.
+Replace [lat2] [long2] with desired latitude.
+Replace [passengers] with the desired number of passengers. This argument is optional.
+
 
  ### Part 1 B
  
- Run
-`java -cp target\BookingGoProject-1.0-SNAPSHOT-jar-with-dependencies.jar com.alin.musat.BookingGoProject.Part1B 1.1 2.1 3.1 4.1 5`
+Run
+Windows: `java -cp target\BookingGoProject-1.0-SNAPSHOT-jar-with-dependencies.jar com.alin.musat.BookingGoProject.Part1B [lat1] [long1] [lat2] [long2] [passengers]`
 
-Replace 1.1 2.1 with desired longitude
-Replace 3.1 4.1 with desired latitude
-Replace 5 with the desired number of passengers. This argument is optional.
+MacOs: `java -cp target/BookingGoProject-1.0-SNAPSHOT-jar-with-dependencies.jar com.alin.musat.BookingGoProject.Part1B [lat1] [long1] [lat2] [long2] [passengers]`
+
+Replace [lat1] [long1] with desired longitude.
+Replace [lat2] [long2] with desired latitude.
+Replace [passengers] with the desired number of passengers. This argument is optional.
 
 ### Part 2
 
