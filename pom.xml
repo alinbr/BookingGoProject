@@ -42,6 +42,14 @@
       <version>2.6.1</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-core_2.11</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+
+
 
   </dependencies>
 
