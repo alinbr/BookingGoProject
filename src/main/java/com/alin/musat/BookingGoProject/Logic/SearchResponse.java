@@ -36,6 +36,23 @@ public class SearchResponse {
         }
     }
 
+    public List<Ride> getCheapestRides() {
+
+        List<Ride> cheapestRides = new ArrayList<>();
+
+        for (Map.Entry<String, Integer> entry : Utilities.maxPassengersOf.entrySet())
+        {
+            Ride cheapest = getCheapest(entry.getKey());
+
+            if (cheapest != null) {
+                cheapestRides.add(cheapest);
+            }
+        }
+
+        return cheapestRides;
+
+    }
+
     public void printResultsWhenAllSuppliers() {
 
         for (Map.Entry<String, Integer> entry : Utilities.maxPassengersOf.entrySet())

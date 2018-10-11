@@ -58,6 +58,12 @@
       <version>3.9.0</version>
     </dependency>
 
+    <dependency>
+      <groupId>com.despegar</groupId>
+      <artifactId>spark-test</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+
 
   </dependencies>
 
