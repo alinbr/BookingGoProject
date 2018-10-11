@@ -40,31 +40,19 @@ public class SearchEngine {
 
         SearchResponse searchResponse = new SearchResponse();
 
-        List<Ride> resultsList = searchResponse.getResultsList();
 
         for(String supplierEndPoint: supplierEndPoints) {
 
             URL url = buildUrl(supplierEndPoint, pickUp, dropOff);
 
-            HttpURLConnection connection;
-            int responseCode = 0;
-            ApiResponse response;
-
             try {
-                connection = (HttpURLConnection) url.openConnection();
-                connection.setConnectTimeout(timeoutMilliseconds);
-                responseCode = connection.getResponseCode();
+                ApiResponse response = makeApiCall(url);
 
-                if (responseCode != 200) {
-                    break;
-                }
-
-                String responseString = readResponse(connection);
-
-                response = deserializeResponse(responseString);
+                if (response == null) break;
 
                 for (Option options: response.getOptions())  {
-                    resultsList.add(new Ride(options.getCarType(), options.getPrice(), response.getSupplierId()));
+                    Ride newRide = new Ride(options.getCarType(), options.getPrice(), response.getSupplierId());
+                    searchResponse.getResultsList().add(newRide);
                 }
             }
             catch (java.net.SocketTimeoutException e)
@@ -73,7 +61,6 @@ public class SearchEngine {
                 break;
             } catch (IOException e) {
                 System.out.println("Could not read the response.");
-                System.out.println("Response code: " + responseCode);
                 break;
             }
 
@@ -88,7 +75,6 @@ public class SearchEngine {
 
     }
 
-
     /**
      * Use this method to perform a new search without limit of passengers.
      * @param pickUp Pick up geolocation
@@ -96,9 +82,38 @@ public class SearchEngine {
      * @return Query response in for of a SearchResponse object.
      */
     public SearchResponse newSearch(GeoLocation pickUp, GeoLocation dropOff) {
+        // By calling this method with zero number of passengers, it will display all results.
         return this.newSearch(pickUp, dropOff, 0);
     }
 
+
+    /**
+     * Make the actual http call.
+     * @param url The url to call.
+     * @return The ApiResponse
+     * @throws IOException If the connection get interrupted.
+     */
+    public ApiResponse makeApiCall(URL url) throws IOException {
+
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+        connection.setConnectTimeout(timeoutMilliseconds);
+
+
+        int responseCode = connection.getResponseCode();
+
+        if (responseCode != 200) {
+            System.out.println("Response code was " + responseCode + " for " + url.toString());
+            System.out.println("Skipped this supplier");
+            return null;
+        }
+
+        String responseString = readResponse(connection);
+
+        System.out.println(responseString);
+
+        return deserializeResponse(responseString);
+    }
 
     /**
      * Deserialize api response into ApiResponse Object.
