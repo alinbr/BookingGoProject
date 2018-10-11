@@ -2,6 +2,7 @@ package com.alin.musat.BookingGoProject;
 
 import com.alin.musat.BookingGoProject.Logic.SearchEngine;
 import com.alin.musat.BookingGoProject.Logic.SearchResponse;
+import com.alin.musat.BookingGoProject.Logic.Utilities;
 import com.alin.musat.BookingGoProject.Models.ApiResponse;
 import com.alin.musat.BookingGoProject.Models.GeoLocation;
 import com.alin.musat.BookingGoProject.Models.Option;

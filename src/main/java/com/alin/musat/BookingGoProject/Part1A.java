@@ -2,10 +2,11 @@ package com.alin.musat.BookingGoProject;
 
 import com.alin.musat.BookingGoProject.Logic.SearchEngine;
 import com.alin.musat.BookingGoProject.Logic.SearchResponse;
+import com.alin.musat.BookingGoProject.Logic.Utilities;
 import com.alin.musat.BookingGoProject.Models.GeoLocation;
 
-import static com.alin.musat.BookingGoProject.Utilities.printHelpMessage;
-import static com.alin.musat.BookingGoProject.Utilities.validateArguments;
+import static com.alin.musat.BookingGoProject.Logic.Utilities.printHelpMessage;
+import static com.alin.musat.BookingGoProject.Logic.Utilities.validateArguments;
 
 public class Part1A {
 

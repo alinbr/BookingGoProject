@@ -1,5 +1,6 @@
 package com.alin.musat.BookingGoProject;
 
+import com.alin.musat.BookingGoProject.Logic.Utilities;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertTrue;

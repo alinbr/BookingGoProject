@@ -1,4 +1,4 @@
-package com.alin.musat.BookingGoProject;
+package com.alin.musat.BookingGoProject.Logic;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,7 +1,6 @@
 package com.alin.musat.BookingGoProject.Logic;
 
 import com.alin.musat.BookingGoProject.Models.Ride;
-import com.alin.musat.BookingGoProject.Utilities;
 
 import java.util.ArrayList;
 import java.util.List;
