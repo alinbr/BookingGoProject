@@ -1,5 +1,9 @@
 package com.alin.musat.BookingGoProject;
 
+import com.alin.musat.BookingGoProject.Logic.SearchEngine;
+import com.alin.musat.BookingGoProject.Logic.SearchResponse;
+import com.alin.musat.BookingGoProject.Models.GeoLocation;
+
 import static com.alin.musat.BookingGoProject.Utilities.*;
 
 /**
@@ -32,6 +36,15 @@ public class ConsoleApp
      * @param args "dave", longitude, latitude and number of passengers.
      */
     public static void DoPart1DaveSearch(String[] args) {
+
+        SearchEngine searchEngine = new SearchEngine();
+        searchEngine.addSupplier(Utilities.DAVE_API);
+
+        GeoLocation pickUp = new GeoLocation(Double.parseDouble(args[1]), Double.parseDouble(args[2]));
+        GeoLocation dropOff = new GeoLocation(Double.parseDouble(args[3]),Double.parseDouble(args[4]));
+        int numberOfPassengers = Integer.parseInt(args[5]);
+
+        SearchResponse searchResponse = searchEngine.newSearch(pickUp, dropOff, numberOfPassengers);
 
     }
 
