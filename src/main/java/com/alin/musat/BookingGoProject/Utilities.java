@@ -2,6 +2,10 @@ package com.alin.musat.BookingGoProject;
 
 public class Utilities {
 
+    public static final String DAVE_API = "https://techtest.rideways.com/dave";
+    public static final String ERIC_API = "https://techtest.rideways.com/eric";
+    public static final String JEFF_API = "https://techtest.rideways.com/jeff";
+
 
     /**
      * Checks if a string can be converted to a positive integer.
