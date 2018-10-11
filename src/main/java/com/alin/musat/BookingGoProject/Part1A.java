@@ -29,7 +29,7 @@ public class Part1A {
             int numberOfPassengers = Integer.parseInt(args[4]);
             searchResponse = searchEngine.newSearch(pickUp, dropOff, numberOfPassengers);
         } else {
-            searchResponse = searchEngine.newSearch(pickUp, dropOff, 0);
+            searchResponse = searchEngine.newSearch(pickUp, dropOff);
         }
 
         searchResponse.printResultsWhenSingleSupplier();

@@ -40,7 +40,6 @@ public class SearchEngine {
 
         SearchResponse searchResponse = new SearchResponse();
 
-
         for(String supplierEndPoint: supplierEndPoints) {
 
             URL url = buildUrl(supplierEndPoint, pickUp, dropOff);
@@ -48,7 +47,7 @@ public class SearchEngine {
             try {
                 ApiResponse response = makeApiCall(url);
 
-                if (response == null) break;
+                if (response == null) continue;
 
                 for (Option options: response.getOptions())  {
                     Ride newRide = new Ride(options.getCarType(), options.getPrice(), response.getSupplierId());
@@ -58,10 +57,10 @@ public class SearchEngine {
             catch (java.net.SocketTimeoutException e)
             {
                 System.out.println("Connection timeout.");
-                break;
+                continue;
             } catch (IOException e) {
                 System.out.println("Could not read the response.");
-                break;
+                continue;
             }
 
         }
@@ -110,8 +109,6 @@ public class SearchEngine {
 
         String responseString = readResponse(connection);
 
-        System.out.println(responseString);
-
         return deserializeResponse(responseString);
     }
 
@@ -157,7 +154,7 @@ public class SearchEngine {
      * @param dropOff Drop off geolocation.
      * @return Built URL.
      */
-    private URL buildUrl(String supplierEndPoint, GeoLocation pickUp, GeoLocation dropOff)
+    public URL buildUrl(String supplierEndPoint, GeoLocation pickUp, GeoLocation dropOff)
     {
         StringBuilder stringBuilder = new StringBuilder(supplierEndPoint);
 

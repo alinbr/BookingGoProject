@@ -16,6 +16,11 @@ public class Option {
     @Expose
     private long price;
 
+    public Option(String carType, long price) {
+        this.carType = carType;
+        this.price = price;
+    }
+
     public String getCarType() {
         return carType;
     }
