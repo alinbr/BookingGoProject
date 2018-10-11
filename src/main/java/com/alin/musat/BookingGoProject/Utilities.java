@@ -9,7 +9,12 @@ public class Utilities {
      * @return True if the string can be converted.
      */
     public static boolean isPositiveInteger(String str) {
-        return true;
+        try {
+            Integer number = Integer.parseInt(str);
+            return number >= 0;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     /**
@@ -18,7 +23,12 @@ public class Utilities {
      * @return True if the string can be converted.
      */
     public static boolean isDouble(String str) {
-        return true;
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     /**
@@ -27,7 +37,18 @@ public class Utilities {
      * @return True if the arguments are valid.
      */
     public static boolean validateArguments(String[] args) {
-        return  true;
+        if (args.length != 6 ||
+                !(args[0].equals("dave") || args[0].equals("all")) ||
+                !isDouble(args[1]) ||
+                !isDouble(args[2]) ||
+                !isDouble(args[3]) ||
+                !isDouble(args[4]) ||
+                !isPositiveInteger(args[5])) {
+
+            return false;
+        }
+
+        return true;
     }
 
     /**
