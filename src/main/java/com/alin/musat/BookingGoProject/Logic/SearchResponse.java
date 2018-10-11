@@ -45,8 +45,6 @@ public class SearchResponse {
 
             if (cheapest != null) {
                 System.out.println(cheapest.getCarType() + " - " + cheapest.getSupplier() + " - " + cheapest.getPrice());
-            } else {
-                System.out.println(entry.getKey() + " - no car found");
             }
         }
 

@@ -59,13 +59,22 @@ public class Utilities {
      * @return True if the arguments are valid.
      */
     public static boolean validateArguments(String[] args) {
-        if (args.length != 5 ||
-                !isDouble(args[0]) ||
-                !isDouble(args[1]) ||
-                !isDouble(args[2]) ||
-                !isDouble(args[3]) ||
-                !isPositiveInteger(args[4])) {
 
+        // check number of arguments.
+        if (args.length != 4 && args.length !=5) {
+            return  false;
+        }
+
+        // check geolocations.
+        if (!(isDouble(args[0]) &&
+             isDouble(args[1]) &&
+             isDouble(args[2]) &&
+             isDouble(args[3]))) {
+            return false;
+        }
+
+        // check number of passengers
+        if (args.length == 5 && !isPositiveInteger(args[4])) {
             return false;
         }
 
@@ -79,7 +88,7 @@ public class Utilities {
         System.out.println("Invalid arguments!");
         System.out.println("e.g: 23.43 12.34 12.4 12.345 4");
         System.out.println("Next 4 numbers indicate the long & latitude.");
-        System.out.println("Last argument is the number of passengers.");
+        System.out.println("Last argument is optional and it is the number of passengers.");
     }
 
 

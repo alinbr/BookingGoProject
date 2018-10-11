@@ -90,6 +90,17 @@ public class SearchEngine {
 
 
     /**
+     * Use this method to perform a new search without limit of passengers.
+     * @param pickUp Pick up geolocation
+     * @param dropOff Drop off geolocation
+     * @return Query response in for of a SearchResponse object.
+     */
+    public SearchResponse newSearch(GeoLocation pickUp, GeoLocation dropOff) {
+        return this.newSearch(pickUp, dropOff, 0);
+    }
+
+
+    /**
      * Deserialize api response into ApiResponse Object.
      * @param responseString Response string from API call.
      * @return Response deserialized.

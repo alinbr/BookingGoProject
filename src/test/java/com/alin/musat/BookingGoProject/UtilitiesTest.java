@@ -55,29 +55,22 @@ public class UtilitiesTest {
 
     @Test
     public void testValidateArgumentsValid() {
-        String[] arguments = new String[] { "dave", "3.4",  "2" , "5", "2.3", "4" };
+        String[] arguments = new String[] { "3.4",  "2" , "5", "2.3", "4" };
         assertTrue(Utilities.validateArguments(arguments));
     }
 
 
     @Test
     public void testValidateArgumentsNotEnoughArguments() {
-        String[] arguments = new String[] { "dave", "3.4",  "2" , "5", "2.3"};
+        String[] arguments = new String[] { "3.4",  "2" , "5"};
         assertFalse(Utilities.validateArguments(arguments));
     }
 
     @Test
     public void testValidateArgumentsTooManyArguments() {
-        String[] arguments = new String[] { "dave", "3.4",  "2" , "5", "2.3", "4", "45" };
+        String[] arguments = new String[] { "3.4",  "2" , "5", "2.3", "4", "45" };
         assertFalse(Utilities.validateArguments(arguments));
     }
-
-    @Test
-    public void testValidateArgumentsInvalidCommand() {
-        String[] arguments = new String[] { "SomeRandomString", "3.4",  "2" , "5", "2.3", "4", "45" };
-        assertFalse(Utilities.validateArguments(arguments));
-    }
-
 
 
 }

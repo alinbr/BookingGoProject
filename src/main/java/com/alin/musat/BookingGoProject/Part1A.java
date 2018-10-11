@@ -22,9 +22,15 @@ public class Part1A {
 
         GeoLocation pickUp = new GeoLocation(Double.parseDouble(args[0]), Double.parseDouble(args[1]));
         GeoLocation dropOff = new GeoLocation(Double.parseDouble(args[2]),Double.parseDouble(args[3]));
-        int numberOfPassengers = Integer.parseInt(args[4]);
 
-        SearchResponse searchResponse = searchEngine.newSearch(pickUp, dropOff, numberOfPassengers);
+        SearchResponse searchResponse;
+
+        if (args.length == 5) {
+            int numberOfPassengers = Integer.parseInt(args[4]);
+            searchResponse = searchEngine.newSearch(pickUp, dropOff, numberOfPassengers);
+        } else {
+            searchResponse = searchEngine.newSearch(pickUp, dropOff, 0);
+        }
 
         searchResponse.printResultsWhenSingleSupplier();
     }
