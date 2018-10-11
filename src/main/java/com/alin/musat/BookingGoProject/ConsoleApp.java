@@ -27,10 +27,18 @@ public class ConsoleApp
     }
 
 
+    /**
+     * Part 1 - Search results for Dave's taxi.
+     * @param args "dave", longitude, latitude and number of passengers.
+     */
     public static void DoPart1DaveSearch(String[] args) {
 
     }
 
+    /**
+     * Part 1 - Search results for all suppliers.
+     * @param args "all", longitude, latitude and number of passenger.
+     */
     public static void DoPart1AllSearch(String[] args) {
 
     }
