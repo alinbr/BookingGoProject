@@ -1,10 +1,28 @@
 package com.alin.musat.BookingGoProject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Utilities {
 
     public static final String DAVE_API = "https://techtest.rideways.com/dave";
     public static final String ERIC_API = "https://techtest.rideways.com/eric";
     public static final String JEFF_API = "https://techtest.rideways.com/jeff";
+
+
+    /**
+     * Static map of every car type and their max number of passengers.
+     */
+    public static final Map<String, Integer> maxPassengersOf = new HashMap<>();
+
+    static {
+        maxPassengersOf.put("STANDARD", 4);
+        maxPassengersOf.put("EXECUTIVE", 4);
+        maxPassengersOf.put("LUXURY", 4);
+        maxPassengersOf.put("PEOPLE_CARRIER", 6);
+        maxPassengersOf.put("LUXURY_PEOPLE_CARRIER", 6);
+        maxPassengersOf.put("MINIBUS", 16);
+    }
 
 
     /**

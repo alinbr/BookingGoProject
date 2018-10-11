@@ -46,6 +46,8 @@ public class ConsoleApp
 
         SearchResponse searchResponse = searchEngine.newSearch(pickUp, dropOff, numberOfPassengers);
 
+        searchResponse.printResultsWhenSingleSupplier();
+
     }
 
     /**
@@ -54,6 +56,18 @@ public class ConsoleApp
      */
     public static void DoPart1AllSearch(String[] args) {
 
+        SearchEngine searchEngine = new SearchEngine();
+        searchEngine.addSupplier(Utilities.DAVE_API);
+        searchEngine.addSupplier(Utilities.ERIC_API);
+        searchEngine.addSupplier(Utilities.JEFF_API);
+
+        GeoLocation pickUp = new GeoLocation(Double.parseDouble(args[1]), Double.parseDouble(args[2]));
+        GeoLocation dropOff = new GeoLocation(Double.parseDouble(args[3]),Double.parseDouble(args[4]));
+        int numberOfPassengers = Integer.parseInt(args[5]);
+
+        SearchResponse searchResponse  = searchEngine.newSearch(pickUp, dropOff, numberOfPassengers);
+
+        searchResponse.printResultsWhenAllSuppliers();
     }
 
 
