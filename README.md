@@ -33,7 +33,9 @@ java -cp target/BookingGoProject-1.0-SNAPSHOT-jar-with-dependencies.jar com.alin
 ```
 
 Replace **[lat1] [long1]** with desired longitude.
+
 Replace **[lat2] [long2]** with desired latitude.
+
 Replace **[passengers]** with the desired number of passengers. This argument is optional.
 
 e.g:
@@ -57,7 +59,9 @@ java -cp target/BookingGoProject-1.0-SNAPSHOT-jar-with-dependencies.jar com.alin
 ```
 
 Replace **[lat1] [long1]** with desired longitude.
+
 Replace **[lat2] [long2]** with desired latitude.
+
 Replace **[passengers]** with the desired number of passengers. This argument is optional.
 
 e.g:
@@ -86,10 +90,24 @@ http://localhost:4567/bokkinggo?pickup=[lat1],[long1]&dropoff=[lat2,long2]&passe
 ```
 
 Replace **[lat1] [long1]** with desired longitude.
+
 Replace **[lat2] [long2]** with desired latitude.
+
 Replace **[passengers]** with the desired number of passengers. This argument is optional.
 
 E.g:
 ```
 http://localhost:4567/bookinggo?pickup=1,1&dropoff=1,1.0&passengers=1
 ```
+
+### Notes
+
+I used:
+* Maven for the builds and dependencies.
+* Gson for serialization and deserialization.
+* Junit for the unit tests and Mockito in order to test newSearch() without calling the api.
+* Spark framework instead of Spring for part 2 since we had only one endpoint.
+
+I am looking forward to your feedback!
+
+
