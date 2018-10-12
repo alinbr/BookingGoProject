@@ -75,7 +75,7 @@ Run this command to start the server:
 
 Windows:
 ```
-java -cp target\BookingGoProject-1.0-SNAPSHOT-jar-with-dependencies.jar com.alin.musat.BookingGoProject.Part2`
+java -cp target\BookingGoProject-1.0-SNAPSHOT-jar-with-dependencies.jar com.alin.musat.BookingGoProject.Part2
 ```
 
 Unix: 
