@@ -1,6 +1,10 @@
 
 # Booking Go Technical Graduate Test
 
+## Requirements
+Java - 1.8.0
+Apache Maven - 3.3+
+
 ## How to use
 
 Clone the repository :
